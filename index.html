@@ -20,7 +20,16 @@
       color: #fff;
       padding: 2rem 1rem 1rem;
       text-align: center;
-      position: relative;
+      animation: fadeIn 2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
     }
     nav {
       background: #0a9396;
@@ -37,15 +46,6 @@
     }
     nav a:hover {
       color: #e0fbfc;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
     }
     main {
       max-width: 900px;
@@ -107,14 +107,16 @@
 </head>
 <body>
   <header>
-    <h1>ChatGPT-Crafted Wisdom</h1>
+    <h1 class="logo">ChatGPT-Crafted Wisdom</h1>
     <p>A blend of ancient wisdom and futuristic AI-powered thought.</p>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
     <a href="anti-cancer-tea.html">Herbal Wisdom</a>
-    <a href="fire-carrier-full.html">Poetry</a>
+    <a href="fire-carrier-beautiful.html">Poetry</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <main>
@@ -132,7 +134,7 @@
     <section>
       <h2>Featured Poem: The Fire Carrier</h2>
       <p>A poetic story for anyone who feels deeply, burns brightly, and walks between worlds—an allegory for those who carry inner fire and divine purpose.</p>
-      <a class="button-link" href="fire-carrier-full.html">Read The Fire Carrier</a>
+      <a class="button-link" href="fire-carrier-beautiful.html">Read The Fire Carrier</a>
     </section>
   </main>
 
