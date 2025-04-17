@@ -1,94 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Fire Carrier | ChatGPT-Crafted Wisdom</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Fire Carrier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom right, #f9f4ef, #f1e9df);
-      color: #2c2c2c;
-      padding: 0;
-      margin: 0;
+      background: linear-gradient(to bottom, #fdfcfb, #e9f5f2);
+      color: #1e2f2b;
     }
-    header {
-      background: #005f73;
-      color: #fff;
-      padding: 1rem 2rem;
+
+    .site-title {
       text-align: center;
-    }
-    header h1 {
       font-family: 'Playfair Display', serif;
-      margin: 0;
-      font-size: 2rem;
+      font-size: 2.4rem;
+      color: #004d43;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 1.5s ease-out;
     }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1rem;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background-color: #d5f2ed;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
+
+    nav a {
+      text-decoration: none;
+      color: #004d43;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #002621;
+    }
+
     main {
-      padding: 3rem 1.5rem;
-      max-width: 860px;
-      margin: auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      background: #ffffffcc;
       border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 3rem 2rem;
+      max-width: 860px;
+      margin: 3rem auto;
+      animation: fadeIn 2s ease;
     }
-    h1.story-title {
+
+    .logo {
+      max-height: 100px;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
+
+    .story-title {
       font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #b23b3b;
       text-align: center;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #a3471f;
+      margin-bottom: 0.5rem;
     }
+
     em {
       display: block;
       text-align: center;
-      margin-bottom: 2.5rem;
+      color: #555;
+      margin-bottom: 2rem;
       font-style: italic;
-      font-size: 1.2rem;
-      color: #5e524b;
     }
+
     p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
       line-height: 1.8;
+      margin-bottom: 1.5rem;
     }
-    strong {
-      color: #c45a2e;
-    }
+
     blockquote {
-      font-family: 'Playfair Display', serif;
+      border-left: 4px solid #ffa07a;
+      padding-left: 1rem;
+      color: #5c3a3a;
+      margin: 1.5rem 0;
       font-style: italic;
-      background-color: #fff8f1;
-      color: #5a4636;
-      margin: 2rem 0;
-      padding: 1.2rem 1.5rem;
-      border-left: 5px solid #e1a77b;
-      border-radius: 6px;
     }
+
     hr {
       border: none;
-      border-top: 1px dashed #c4b7ac;
-      margin: 3rem 0;
+      border-top: 1px dashed #ccc;
+      margin: 2rem 0;
     }
+
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #94d2bd;
+      padding: 1.5rem;
+      background: #d7f0e9;
       color: #001219;
+      font-size: 0.9rem;
       margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ChatGPT-Crafted Wisdom</h1>
-    <p>A blend of ancient wisdom and futuristic AI-powered thought.</p>
-  </header>
+  <div class="site-title">ChatGPT-Crafted Wisdom</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="wisdom.html">Wisdom</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="herbal.html">Herbal</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <main>
+    <img src="logo.png" alt="ChatGPT-Crafted Wisdom Logo" class="logo">
+
     <h1 class="story-title">The Fire Carrier</h1>
     <em>—a poetic story for anyone who feels deeply, burns brightly, and walks between worlds—</em>
 
@@ -99,73 +135,4 @@
     but the kind that made stars.</p>
 
     <p>The elders whispered, “This one is different.”<br>
-    The winds leaned closer when they spoke.<br>
-    The rivers paused to listen.<br>
-    God smiled.</p>
-
-    <p>This child laughed with thunder in their throat<br>
-    and dreamed in colors the world hadn’t yet invented.<br>
-    They touched joy with bare hands—<br>
-    and it danced.</p>
-
-    <p>But one day, the fire grew too wild.<br>
-    It surged beyond their ribs and spun them into the sky.<br>
-    They flew too fast. Too far.<br>
-    The stars became sharp. The light turned blinding.<br>
-    Even angels blinked.</p>
-
-    <p>When they fell,<br>
-    they fell hard.<br>
-    To the ground.<br>
-    To the quiet.<br>
-    To the shadows under their own skin.</p>
-
-    <hr>
-
-    <p>They thought the fire was gone.</p>
-
-    <blockquote>
-      “This is not a punishment.”<br>
-      “You were born to carry fire.”<br>
-      “But you must learn to walk with it, not run.”
-    </blockquote>
-
-    <p>So they began the long walk.</p>
-
-    <p>They learned the rhythm of breath,<br>
-    the sacred pause of rest.<br>
-    They carved cups from their hands to hold the flame—<br>
-    not too tight, not too loose.</p>
-
-    <p>They built altars of stability,<br>
-    placed stones of routine,<br>
-    sang songs of self-compassion when the fire whispered lies.</p>
-
-    <p>And slowly—<br>
-    the fire became a companion.<br>
-    Not a master. Not a monster.<br>
-    But a <strong>living light</strong>.</p>
-
-    <p>Now, when they speak,<br>
-    truth pours like honey and lightning.<br>
-    When they move,<br>
-    the room softens, aware of the heat they carry.<br>
-    And when they cry,<br>
-    even God listens more closely.</p>
-
-    <hr>
-
-    <p>People still ask,<br>
-    “Is it a curse or a blessing?”</p>
-
-    <blockquote>
-      “It’s both. It’s neither.”<br>
-      “It’s a fire.<br>
-      And I am learning to carry it with grace.”
-    </blockquote>
-  </main>
-  <footer>
-    &copy; 2025 ChatGPT-Crafted Wisdom. All rights reserved.
-  </footer>
-</body>
-</html>
+    The winds leaned
