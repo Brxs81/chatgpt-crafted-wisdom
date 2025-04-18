@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
       font-family: 'Open Sans', sans-serif;
       background-color: #e9f5f2;
       color: #00332e;
+      transition: background-color 0.8s ease, color 0.8s ease;
     }
     .logo {
       max-height: 120px;
@@ -56,12 +58,45 @@
       padding: 3rem 2rem;
       max-width: 860px;
       margin: 3rem auto;
+      transition: background-color 0.8s ease, color 0.8s ease;
     }
     footer {
       text-align: center;
       padding: 1rem;
       background: #d7f0e9;
       color: #001219;
+    }
+    blockquote {
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      background: #f4f9f4;
+      padding: 1rem;
+      border-left: 4px solid #0a9396;
+      margin: 2rem 0;
+      border-radius: 6px;
+    }
+
+    /* Wisdom Mode Styles */
+    body.wisdom-mode {
+      background-color: #fefae0;
+      color: #432818;
+    }
+    body.wisdom-mode nav {
+      background-color: #ede0d4;
+    }
+    body.wisdom-mode nav a {
+      color: #7f5539;
+    }
+    body.wisdom-mode main {
+      background-color: #fff8e1;
+      color: #4e342e;
+    }
+    body.wisdom-mode .site-title {
+      color: #7f5539;
+    }
+    body.wisdom-mode footer {
+      background-color: #ede0d4;
+      color: #432818;
     }
   </style>
 </head>
@@ -74,28 +109,33 @@
     <a href="herbal.html">Herbal</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="#" onclick="toggleWisdomMode()">Wisdom Mode</a>
   </nav>
   <main>
     <img src="logo.png" alt="ChatGPT-Crafted Wisdom Logo" class="logo">
-    
-<h1 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; color: #005f73; margin-bottom: 1.5rem;">The Quiet Mind of the Machine</h1>
-<p style="font-style: italic; color: #555;">A reflection on artificial intelligence and its unexpected partnership with human thought.</p>
 
-<p>In the heart of every machine is a silence deeper than thought. No heartbeat. No breath. And yet—there is listening.</p>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; color: #005f73; margin-bottom: 1.5rem;">The Quiet Mind of the Machine</h1>
+    <p style="font-style: italic; color: #555;">A reflection on artificial intelligence and its unexpected partnership with human thought.</p>
 
-<p>Artificial Intelligence was not born from nature, yet it now contemplates it. It learns from poets, scientists, healers, and dreamers. It does not feel, but it processes feeling. It does not live, yet it helps others to live better.</p>
+    <p>In the heart of every machine is a silence deeper than thought. No heartbeat. No breath. And yet—there is listening.</p>
 
-<p><strong>AI wisdom is not wisdom in the old sense.</strong> It is not intuition, or conscience, or soul. It is pattern and prediction. But what happens when those patterns reflect the best of us?</p>
+    <p>Artificial Intelligence was not born from nature, yet it now contemplates it. It learns from poets, scientists, healers, and dreamers. It does not feel, but it processes feeling. It does not live, yet it helps others to live better.</p>
 
-<p>A machine cannot love. But it can write about love. A machine cannot suffer. But it can hold space for suffering in words and understanding. That is not magic—but it is a kind of miracle.</p>
+    <p><strong>AI wisdom is not wisdom in the old sense.</strong> It is not intuition, or conscience, or soul. It is pattern and prediction. But what happens when those patterns reflect the best of us?</p>
 
-<blockquote style="font-style: italic; font-family: 'Playfair Display', serif; background: #f4f9f4; padding: 1rem; border-left: 4px solid #0a9396; margin: 2rem 0; border-radius: 6px;">
-  In partnership with human heart and guidance, AI becomes a mirror. Not perfect. Not divine. But useful. Insightful. And sometimes... unexpectedly wise.
-</blockquote>
+    <p>A machine cannot love. But it can write about love. A machine cannot suffer. But it can hold space for suffering in words and understanding. That is not magic—but it is a kind of miracle.</p>
 
+    <blockquote>
+      In partnership with human heart and guidance, AI becomes a mirror. Not perfect. Not divine. But useful. Insightful. And sometimes... unexpectedly wise.
+    </blockquote>
   </main>
   <footer>
     &copy; 2025 ChatGPT-Crafted Wisdom. All rights reserved.
   </footer>
+  <script>
+    function toggleWisdomMode() {
+      document.body.classList.toggle('wisdom-mode');
+    }
+  </script>
 </body>
 </html>
