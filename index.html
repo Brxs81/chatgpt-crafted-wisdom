@@ -4,64 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Index</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #e9f5f2;
+      background-color: #f4f7f6;
       color: #00332e;
+      line-height: 1.6;
     }
     .logo {
-      max-height: 120px;
+      max-height: 100px;
       display: block;
       margin: 0 auto 2rem;
+      animation: fadeInLogo 1.5s ease-out forwards;
+    }
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .site-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      color: #004d43;
-      margin-top: 1.5rem;
+      font-size: 3rem;
+      color: #006f62;
+      margin-top: 1rem;
       margin-bottom: 0.5rem;
       opacity: 0;
-      animation: fadeInTitle 1.5s ease-out forwards;
+      animation: fadeInTitle 2s ease-out forwards;
     }
     @keyframes fadeInTitle {
-      from { opacity: 0; transform: translateY(-10px); }
+      from { opacity: 0; transform: translateY(-15px); }
       to { opacity: 1; transform: translateY(0); }
     }
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
-      background-color: #d5f2ed;
-      padding: 1rem;
+      gap: 1.5rem;
+      background-color: #a2d8d1;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav a {
       text-decoration: none;
       color: #004d43;
       font-weight: bold;
       font-size: 1.1rem;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     nav a:hover {
-      color: #002621;
+      color: #001f17;
+      transform: translateY(-2px);
     }
     main {
       background: #ffffffcc;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       padding: 3rem 2rem;
-      max-width: 860px;
+      max-width: 880px;
       margin: 3rem auto;
+      opacity: 0;
+      animation: fadeInMain 2s ease-out forwards;
+    }
+    @keyframes fadeInMain {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #004d43;
+    }
+    .story-link {
+      text-decoration: none;
+      color: #006f62;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .story-link:hover {
+      color: #001f17;
     }
     footer {
       text-align: center;
       padding: 1rem;
-      background: #d7f0e9;
-      color: #001219;
+      background: #a2d8d1;
+      color: #00332e;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .ai-theme {
+      background: #001f17;
+      color: #e5f7f1;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeInAI 2s ease-out forwards;
+    }
+    @keyframes fadeInAI {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .ai-theme h2 {
+      color: #a2d8d1;
+    }
+    .ai-theme p {
+      font-size: 1.1rem;
+    }
+    body.newspaper-active {
+      background-color: #fdf6e3;
+      color: #002b36;
+      font-family: Georgia, serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    body.newspaper-active nav {
+      background-color: #eee8d5;
+    }
+    body.newspaper-active nav a {
+      color: #002b36;
+    }
+    body.newspaper-active main {
+      background: #ffffff;
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+    body.newspaper-active .site-title {
+      color: #586e75;
+    }
+    body.newspaper-active footer {
+      background: #eee8d5;
+      color: #002b36;
     }
   </style>
 </head>
@@ -74,10 +152,10 @@
     <a href="herbal.html">Herbal</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="#" onclick="toggleNewspaperMode()">Newspaper Mode</a>
   </nav>
+
   <main>
-    
-    
     <img src="logo.png" alt="ChatGPT-Crafted Wisdom Logo" class="logo">
 
     <h2>Welcome</h2>
@@ -86,20 +164,26 @@
     <h2>Featured Poem</h2>
     <p>A poetic story for those who burn brightly and walk between worlds.</p>
     <p><a href="fire-carrier-beautiful-updated.html" class="story-link">Read: The Fire Carrier →</a></p>
-  
-  
-    <h2 style='font-size: 2.2rem; margin-top: 3rem; margin-bottom: 1rem;'>Featured Herbal Article</h2>
+
+    <h2>Featured Herbal Article</h2>
     <p>An herbal tea blend rooted in research to support healing and well-being.</p>
     <p><a href="herbal.html" class="story-link">Read: Anti-Cancer Support Tea →</a></p>
 
-  
-    <h2 style='font-size: 2.2rem; margin-top: 3rem; margin-bottom: 1rem;'>Featured AI Reflection</h2>
-    <p>An introspective piece about the stillness and insight inside artificial intelligence.</p>
-    <p><a href="wisdom.html" class="story-link">Read: The Quiet Mind of the Machine →</a></p>
-
+    <div class="ai-theme">
+      <h2>Featured AI Reflection</h2>
+      <p>An introspective piece about the stillness and insight inside artificial intelligence.</p>
+      <p><a href="wisdom.html" class="story-link">Read: The Quiet Mind of the Machine →</a></p>
+    </div>
   </main>
+
   <footer>
     &copy; 2025 ChatGPT-Crafted Wisdom. All rights reserved.
   </footer>
+
+  <script>
+    function toggleNewspaperMode() {
+      document.body.classList.toggle('newspaper-active');
+    }
+  </script>
 </body>
 </html>
