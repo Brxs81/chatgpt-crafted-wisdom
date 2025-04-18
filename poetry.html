@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+￼Enter file contents here
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,62 +7,156 @@
   <title>Fire-Carrier-Beautiful-Updated</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #e9f5f2;
+      --text-color: #00332e;
+      --nav-bg: #d5f2ed;
+      --link-color: #004d43;
+      --hover-color: #002621;
+      --main-bg: #ffffffcc;
+      --footer-bg: #d7f0e9;
+    }
+
+    body.fire-mode {
+      --bg-color: #2b0f0b;
+      --text-color: #ffe6dc;
+      --nav-bg: #3b1410;
+      --link-color: #ff8243;
+      --hover-color: #ffd6c0;
+      --main-bg: #3b1d1aee;
+      --footer-bg: #2e0b07;
+    }
+
     body {
+      position: relative;
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #e9f5f2;
-      color: #00332e;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.5s, color 0.5s;
     }
+
     .logo {
       max-height: 120px;
       display: block;
       margin: 0 auto 2rem;
     }
+
+    body.fire-mode .logo {
+      animation: fireGlow 2.5s infinite ease-in-out;
+    }
+
+    @keyframes fireGlow {
+      0% { filter: drop-shadow(0 0 5px #ff6b3d); }
+      50% { filter: drop-shadow(0 0 15px #ffa07a); }
+      100% { filter: drop-shadow(0 0 5px #ff6b3d); }
+    }
+
     .site-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem;
-      color: #004d43;
+      color: var(--link-color);
       margin-top: 1.5rem;
       margin-bottom: 0.5rem;
       opacity: 0;
       animation: fadeInTitle 1.5s ease-out forwards;
     }
+
     @keyframes fadeInTitle {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     nav {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       gap: 2rem;
-      background-color: #d5f2ed;
+      background-color: var(--nav-bg);
       padding: 1rem;
+      transition: background-color 0.5s;
     }
+
     nav a {
       text-decoration: none;
-      color: #004d43;
+      color: var(--link-color);
       font-weight: bold;
       font-size: 1.1rem;
       transition: color 0.3s ease;
     }
+
     nav a:hover {
-      color: #002621;
+      color: var(--hover-color);
     }
+
+    .mode-toggle {
+      cursor: pointer;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      background: var(--link-color);
+      color: white;
+      font-weight: bold;
+      border: none;
+      transition: background 0.3s;
+    }
+
+    .mode-toggle:hover {
+      background: var(--hover-color);
+    }
+
     main {
-      background: #ffffffcc;
+      background: var(--main-bg);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 3rem 2rem;
       max-width: 860px;
       margin: 3rem auto;
+      transition: background 0.5s;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background: #d7f0e9;
-      color: #001219;
+      background: var(--footer-bg);
+      color: var(--text-color);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.fire-mode main {
+      box-shadow: 0 0 25px rgba(255, 72, 0, 0.3);
+    }
+
+    blockquote {
+      border-left: 4px solid var(--link-color);
+      padding-left: 1rem;
+      margin-left: 0;
+      font-style: italic;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--text-color);
+      margin: 2rem 0;
+    }
+
+    /* Fire Embers Background */
+    body.fire-mode::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at bottom, rgba(255, 85, 0, 0.1), transparent 70%),
+                  radial-gradient(circle, rgba(255, 100, 50, 0.1) 20%, transparent 70%),
+                  repeating-radial-gradient(circle, rgba(255, 50, 0, 0.15), transparent 10%);
+      animation: emberDrift 20s linear infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes emberDrift {
+      0% { background-position: 0 0, 0 0, 0 0; }
+      100% { background-position: 0 -500px, 100px -300px, -200px -800px; }
     }
   </style>
 </head>
@@ -74,6 +169,7 @@
     <a href="herbal.html">Herbal</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <button class="mode-toggle" onclick="toggleFireMode()">Fire Mode</button>
   </nav>
   <main>
     <img src="logo.png" alt="ChatGPT-Crafted Wisdom Logo" class="logo">
@@ -152,10 +248,15 @@
       “It’s a fire.<br>
       And I am learning to carry it with grace.”
     </blockquote>
-  
   </main>
   <footer>
     &copy; 2025 ChatGPT-Crafted Wisdom. All rights reserved.
   </footer>
+
+  <script>
+    function toggleFireMode() {
+      document.body.classList.toggle('fire-mode');
+    }
+  </script>
 </body>
 </html>
