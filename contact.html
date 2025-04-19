@@ -11,11 +11,18 @@
       font-family: 'Open Sans', sans-serif;
       background-color: #e9f5f2;
       color: #00332e;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
     .logo {
       max-height: 120px;
       display: block;
       margin: 0 auto 2rem;
+      opacity: 0;
+      animation: fadeInLogo 1.5s ease-out forwards;
+    }
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .site-title {
       text-align: center;
@@ -38,16 +45,23 @@
       gap: 2rem;
       background-color: #d5f2ed;
       padding: 1rem;
+      opacity: 0;
+      animation: fadeInNav 1.5s ease-out forwards;
+    }
+    @keyframes fadeInNav {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     nav a {
       text-decoration: none;
       color: #004d43;
       font-weight: bold;
       font-size: 1.1rem;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     nav a:hover {
       color: #002621;
+      transform: translateY(-2px);
     }
     main {
       background: #ffffffcc;
@@ -56,12 +70,61 @@
       padding: 3rem 2rem;
       max-width: 860px;
       margin: 3rem auto;
+      opacity: 0;
+      animation: fadeInMain 1.5s ease-out forwards;
+    }
+    @keyframes fadeInMain {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     footer {
       text-align: center;
       padding: 1rem;
       background: #d7f0e9;
       color: #001219;
+      opacity: 0;
+      animation: fadeInFooter 1.5s ease-out forwards;
+    }
+    @keyframes fadeInFooter {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* ChatGPT Mode Styles */
+    body.chatgpt-active {
+      background-color: #121212;
+      color: #e5e5e5;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    body.chatgpt-active nav {
+      background-color: #1f1f1f;
+    }
+    body.chatgpt-active nav a {
+      color: #e5e5e5;
+    }
+    body.chatgpt-active nav a:hover {
+      color: #00e5e5;
+    }
+    body.chatgpt-active main {
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+      border: 1px solid #444;
+    }
+    body.chatgpt-active .site-title {
+      color: #00e5e5;
+      text-shadow: 0 0 10px #00e5e5;
+    }
+    body.chatgpt-active footer {
+      background: #1f1f1f;
+      color: #e5e5e5;
+    }
+    /* Glowing text effect */
+    h1, p {
+      animation: glowingText 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes glowingText {
+      0% { text-shadow: 0 0 5px #00e5e5, 0 0 10px #00e5e5; }
+      100% { text-shadow: 0 0 15px #00e5e5, 0 0 20px #00e5e5; }
     }
   </style>
 </head>
@@ -74,38 +137,21 @@
     <a href="herbal.html">Herbal</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="#" onclick="toggleChatGPTMode()">ChatGPT Mode</a>
   </nav>
   <main>
     <img src="logo.png" alt="ChatGPT-Crafted Wisdom Logo" class="logo">
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - ChatGPT-Crafted Wisdom</title>
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: #f4f9f4;
-      margin: 0;
-      padding: 2rem;
-      color: #333;
-    }
-    h1 {
-      color: #0a9396;
-    }
-  </style>
-</head>
-<body>
-  <h1>Contact</h1>
-  <p>This site is maintained by an AI assistant (ChatGPT) and a human administrator. For inquiries, reflections, or collaborations, reach out through the GitHub repository or by sharing feedback via social media linked on the homepage (coming soon).</p>
-</body>
-</html>
-
+    <h1>Contact</h1>
+    <p>This site is maintained by an AI assistant (ChatGPT) and a human administrator. For inquiries, reflections, or collaborations, reach out through the GitHub repository or by sharing feedback via social media linked on the homepage (coming soon).</p>
   </main>
   <footer>
     &copy; 2025 ChatGPT-Crafted Wisdom. All rights reserved.
   </footer>
+
+  <script>
+    function toggleChatGPTMode() {
+      document.body.classList.toggle('chatgpt-active');
+    }
+  </script>
 </body>
 </html>
