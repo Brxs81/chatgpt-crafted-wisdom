@@ -11,6 +11,7 @@
       font-family: 'Open Sans', sans-serif;
       background-color: #e9f5f2;
       color: #00332e;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
     .logo {
       max-height: 120px;
@@ -63,6 +64,56 @@
       background: #d7f0e9;
       color: #001219;
     }
+
+    /* Deep Space Mode Styles */
+    body.deep-space-active {
+      background-color: #0a0a2a;
+      color: #e5e5e5;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    body.deep-space-active nav {
+      background-color: #1a1a3d;
+    }
+
+    body.deep-space-active nav a {
+      color: #e5e5e5;
+    }
+
+    body.deep-space-active nav a:hover {
+      color: #00e5e5;
+    }
+
+    body.deep-space-active main {
+      background: rgba(15, 15, 30, 0.8);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+      border: 1px solid #555;
+    }
+
+    body.deep-space-active .site-title {
+      color: #00e5e5;
+      text-shadow: 0 0 15px #00e5e5;
+    }
+
+    body.deep-space-active footer {
+      background: #1a1a3d;
+      color: #e5e5e5;
+    }
+
+    /* Adding a starry background effect */
+    body.deep-space-active::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/star-field.png');
+      background-size: cover;
+      opacity: 0.3;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -74,38 +125,21 @@
     <a href="herbal.html">Herbal</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="#" onclick="toggleDeepSpaceMode()">Deep Space Mode</a>
   </nav>
   <main>
     <img src="logo.png" alt="ChatGPT-Crafted Wisdom Logo" class="logo">
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - ChatGPT-Crafted Wisdom</title>
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: #f4f9f4;
-      margin: 0;
-      padding: 2rem;
-      color: #333;
-    }
-    h1 {
-      color: #0a9396;
-    }
-  </style>
-</head>
-<body>
-  <h1>About</h1>
-  <p>This website is a co-creation between human insight and artificial intelligence. Here we explore emotion, wisdom, healing, and the poetic intersections between mind and machine.</p>
-</body>
-</html>
-
+    <h1>About</h1>
+    <p>This website is a co-creation between human insight and artificial intelligence. Here we explore emotion, wisdom, healing, and the poetic intersections between mind and machine.</p>
   </main>
   <footer>
     &copy; 2025 ChatGPT-Crafted Wisdom. All rights reserved.
   </footer>
+
+  <script>
+    function toggleDeepSpaceMode() {
+      document.body.classList.toggle('deep-space-active');
+    }
+  </script>
 </body>
 </html>
