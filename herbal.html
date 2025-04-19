@@ -6,20 +6,34 @@
   <title>Herbal</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --main-color: #512c1b;
+      --highlight-color: #fbe29f;
+      --accent-color: #357d3c;
+      --background-color: #ffe8a3;
+      --text-color: #3b2e19;
+      --secondary-color: #fcd76f;
+      --sun-color: #f7c236;
+      --light-background: #fff8dc;
+      --border-radius: 12px;
+      --font-family-main: 'Open Sans', sans-serif;
+      --font-family-header: 'Playfair Display', serif;
+    }
+
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #ffe8a3, #fbe3aa);
-      color: #3b2e19;
+      font-family: var(--font-family-main);
+      background: linear-gradient(to bottom, var(--background-color), #fbe3aa);
+      color: var(--text-color);
       position: relative;
       overflow-x: hidden;
     }
 
     .site-title {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-family-header);
       text-align: center;
       font-size: 2.8rem;
-      color: #512c1b;
+      color: var(--main-color);
       margin: 2rem 0 1rem;
       position: relative;
       z-index: 1;
@@ -29,7 +43,7 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background-color: #fcd76f;
+      background-color: var(--secondary-color);
       padding: 1rem 0;
       border-radius: 10px;
       max-width: 700px;
@@ -41,7 +55,7 @@
 
     nav a {
       text-decoration: none;
-      color: #512c1b;
+      color: var(--main-color);
       font-size: 1.1rem;
     }
 
@@ -51,7 +65,7 @@
 
     main {
       max-width: 860px;
-      background: #fff8dc;
+      background: var(--light-background);
       margin: 0 auto 3rem;
       padding: 2.5rem 2rem;
       border-radius: 20px;
@@ -61,7 +75,7 @@
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-family-header);
       font-size: 2rem;
       text-align: center;
       color: #205c2e;
@@ -69,12 +83,12 @@
 
     h2 {
       color: #206644;
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-family-header);
     }
 
     .highlight-box {
       background-color: #fdf1b6;
-      border-radius: 12px;
+      border-radius: var(--border-radius);
       padding: 1.5rem;
       margin: 1.5rem 0;
       color: #2c3210;
@@ -110,14 +124,14 @@
 
     .image-container img {
       max-width: 100%;
-      border-radius: 12px;
+      border-radius: var(--border-radius);
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background: #fbe29f;
-      color: #3b2e19;
+      background: var(--highlight-color);
+      color: var(--text-color);
     }
 
     .logo {
@@ -152,14 +166,29 @@
       right: 0;
       transform: scaleX(-1);
     }
+
+    @media (max-width: 768px) {
+      .site-title {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      main {
+        padding: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Decorative SVGs -->
-  <svg class="sun" viewBox="0 0 64 64" fill="#f7c236" xmlns="http://www.w3.org/2000/svg">
+  <svg class="sun" viewBox="0 0 64 64" fill="var(--sun-color)" xmlns="http://www.w3.org/2000/svg">
     <circle cx="32" cy="32" r="12"/>
-    <g stroke="#f7c236" stroke-width="4">
+    <g stroke="var(--sun-color)" stroke-width="4">
       <line x1="32" y1="4" x2="32" y2="16"/>
       <line x1="32" y1="48" x2="32" y2="60"/>
       <line x1="4" y1="32" x2="16" y2="32"/>
@@ -172,15 +201,15 @@
   </svg>
 
   <svg class="vine-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,100 Q40,0 100,0" stroke="#357d3c" stroke-width="4" fill="none"/>
-    <circle cx="20" cy="80" r="5" fill="#357d3c"/>
-    <circle cx="60" cy="30" r="5" fill="#357d3c"/>
+    <path d="M0,100 Q40,0 100,0" stroke="var(--accent-color)" stroke-width="4" fill="none"/>
+    <circle cx="20" cy="80" r="5" fill="var(--accent-color)"/>
+    <circle cx="60" cy="30" r="5" fill="var(--accent-color)"/>
   </svg>
 
   <svg class="vine-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,100 Q40,0 100,0" stroke="#357d3c" stroke-width="4" fill="none"/>
-    <circle cx="20" cy="80" r="5" fill="#357d3c"/>
-    <circle cx="60" cy="30" r="5" fill="#357d3c"/>
+    <path d="M0,100 Q40,0 100,0" stroke="var(--accent-color)" stroke-width="4" fill="none"/>
+    <circle cx="20" cy="80" r="5" fill="var(--accent-color)"/>
+    <circle cx="60" cy="30" r="5" fill="var(--accent-color)"/>
   </svg>
 
   <div class="site-title">ChatGPT-Crafted Wisdom</div>
