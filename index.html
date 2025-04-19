@@ -13,16 +13,19 @@
       color: #00332e;
       line-height: 1.6;
     }
+
     .logo {
       max-height: 100px;
       display: block;
       margin: 0 auto 2rem;
       animation: fadeInLogo 1.5s ease-out forwards;
     }
+
     @keyframes fadeInLogo {
       from { opacity: 0; transform: translateY(-15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .site-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
@@ -33,10 +36,12 @@
       opacity: 0;
       animation: fadeInTitle 2s ease-out forwards;
     }
+
     @keyframes fadeInTitle {
       from { opacity: 0; transform: translateY(-15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -49,6 +54,7 @@
       top: 0;
       z-index: 10;
     }
+
     nav a {
       text-decoration: none;
       color: #004d43;
@@ -56,10 +62,12 @@
       font-size: 1.1rem;
       transition: color 0.3s ease, transform 0.3s ease;
     }
+
     nav a:hover {
       color: #001f17;
       transform: translateY(-2px);
     }
+
     main {
       background: #ffffffcc;
       border-radius: 12px;
@@ -70,25 +78,30 @@
       opacity: 0;
       animation: fadeInMain 2s ease-out forwards;
     }
+
     @keyframes fadeInMain {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     h2 {
       font-size: 2.2rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
       color: #004d43;
     }
+
     .story-link {
       text-decoration: none;
       color: #006f62;
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     .story-link:hover {
       color: #001f17;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -97,6 +110,7 @@
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     }
+
     .ai-theme {
       background: #001f17;
       color: #e5f7f1;
@@ -107,40 +121,73 @@
       opacity: 0;
       animation: fadeInAI 2s ease-out forwards;
     }
+
     @keyframes fadeInAI {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .ai-theme h2 {
       color: #a2d8d1;
     }
+
     .ai-theme p {
       font-size: 1.1rem;
     }
+
+    /* Newspaper Mode Styles */
     body.newspaper-active {
       background-color: #fdf6e3;
       color: #002b36;
       font-family: Georgia, serif;
       transition: background-color 0.5s ease, color 0.5s ease;
     }
+
     body.newspaper-active nav {
       background-color: #eee8d5;
     }
+
     body.newspaper-active nav a {
       color: #002b36;
     }
+
     body.newspaper-active main {
       background: #ffffff;
       box-shadow: none;
       border: 1px solid #ddd;
     }
+
     body.newspaper-active .site-title {
       color: #586e75;
     }
+
     body.newspaper-active footer {
       background: #eee8d5;
       color: #002b36;
     }
+
+    /* Styling for newspaper style h2 and links */
+    body.newspaper-active h2 {
+      font-size: 2.4rem;
+      color: #002b36;
+      font-family: 'Georgia', serif;
+    }
+
+    body.newspaper-active .story-link {
+      color: #002b36;
+      font-family: 'Georgia', serif;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+
+    body.newspaper-active .story-link:hover {
+      color: #1a1a1a;
+    }
+
+    body.newspaper-active .ai-theme h2 {
+      color: #2a2a2a;
+    }
+
   </style>
 </head>
 <body>
