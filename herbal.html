@@ -64,25 +64,29 @@
 
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       background-color: #ffe6a7;
-      padding: 0.6rem 0;
-      gap: 1.5rem;
+      padding: 0.3rem 0.6rem;
       font-family: 'Playfair Display', serif;
       font-weight: bold;
       position: relative;
       z-index: 2;
       border-bottom: 2px solid #e0c987;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     nav a {
+      flex: 1 1 calc(33.333% - 1rem);
+      text-align: center;
       text-decoration: none;
       color: #5c3b1e;
-      font-size: 0.9rem; /* Smaller font size */
-      padding: 0.3rem 0.8rem; /* Less padding */
-      border-radius: 10px; /* Slightly smaller radius */
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 10px;
       transition: all 0.3s ease;
     }
 
@@ -95,10 +99,12 @@
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        align-items: center;
+        max-width: 100%;
       }
       nav a {
-        margin: 0.5rem 0;
+        flex: none;
+        width: 100%;
+        margin: 0.3rem 0;
       }
     }
 
