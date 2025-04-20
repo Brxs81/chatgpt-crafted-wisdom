@@ -6,13 +6,107 @@
   <title>ChatGPT-Crafted Wisdom</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #5c3b1e;
+      --secondary-color: #2e6834;
+      --accent-color: #fff3b0;
+      --bg-gradient: linear-gradient(to bottom, #f9e4b7, #fffbe6);
+      --box-bg: #fff8e1;
+      --nav-bg: #ffe6a7;
+      --footer-bg: #ffedb5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #f9e4b7, #fffbe6);
+      background: var(--bg-gradient);
       color: #2e2e1f;
       position: relative;
       overflow-x: hidden;
+    }
+
+    header.site-header {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: var(--primary-color);
+      padding: 80px 1rem 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--nav-bg);
+      padding: 0.8rem;
+      gap: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #2c1f0f;
+    }
+
+    main {
+      background: var(--box-bg);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: block;
+      margin: 1rem auto;
+      max-height: 100px;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--secondary-color);
+    }
+
+    .highlight-box {
+      background: var(--accent-color);
+      padding: 1rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--footer-bg);
+      font-size: 0.9rem;
+      color: var(--primary-color);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
     }
 
     .sun-img {
@@ -51,84 +145,27 @@
       50% { transform: rotate(3deg); }
     }
 
-    .site-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      color: #5c3b1e;
-      padding-top: 80px;
-      margin-bottom: 1rem;
-      z-index: 2;
-      position: relative;
-    }
+    @media (max-width: 600px) {
+      header.site-header {
+        font-size: 2rem;
+        padding-top: 60px;
+      }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffe6a7;
-      padding: 0.8rem;
-      gap: 2rem;
-      font-family: 'Playfair Display', serif;
-      font-weight: bold;
-      z-index: 2;
-      position: relative;
-    }
+      nav {
+        gap: 1rem;
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: center;
+      }
 
-    nav a {
-      text-decoration: none;
-      color: #5c3b1e;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
+      .sun-img {
+        width: 70px;
+        right: 20px;
+      }
 
-    nav a:hover {
-      color: #2c1f0f;
-    }
-
-    main {
-      background: #fff8e1;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 2;
-    }
-
-    .logo {
-      display: block;
-      margin: 1rem auto;
-      max-height: 100px;
-    }
-
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-      color: #2e6834;
-    }
-
-    .highlight-box {
-      background: #fff3b0;
-      padding: 1rem;
-      border-radius: 12px;
-      margin: 1rem 0;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #ffedb5;
-      font-size: 0.9rem;
-      color: #5c3b1e;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 8px;
+      .vine-img {
+        width: 100px;
+      }
     }
   </style>
 </head>
@@ -139,10 +176,11 @@
   <img src="vine-left-highres.png" alt="Left Vine" class="vine-img vine-left" />
   <img src="vine-right-highres.png" alt="Right Vine" class="vine-img vine-right" />
 
-  <!-- Header & Nav -->
-  <div class="site-title">ChatGPT-Crafted Wisdom</div>
+  <!-- Site Header -->
+  <header class="site-header">ChatGPT-Crafted Wisdom</header>
 
-  <nav>
+  <!-- Navigation -->
+  <nav aria-label="Main Navigation">
     <a href="index.html">Home</a>
     <a href="wisdom.html">Wisdom</a>
     <a href="poetry.html">Poetry</a>
@@ -151,12 +189,13 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- Main Content -->
   <main>
     <img src="logo.png" alt="ChatGPT-Crafted Wisdom Logo" class="logo">
 
     <header>
       <h1>Anti-Cancer Support & Prevention Tea Blend</h1>
-      <p>A ChatGPT-Crafted Wisdom Article | A blend of ancient herbal knowledge and AI insight</p>
+      <p>A blend of ancient herbal knowledge and AI insight</p>
     </header>
 
     <section>
@@ -185,25 +224,25 @@
     <section>
       <h2>Functional Herb Categories</h2>
       <ul>
-        <li><strong>Antioxidants:</strong> Green Tea, Turmeric, Holy Basil – Protects cells from oxidative stress</li>
-        <li><strong>Anti-inflammatories:</strong> Turmeric, Ginger, Red Clover – Reduces chronic inflammation</li>
-        <li><strong>Liver Support:</strong> Dandelion Root, Milk Thistle – Promotes detoxification</li>
-        <li><strong>Immune Modulators:</strong> Holy Basil, Reishi Mushroom – Enhances immune defense</li>
-        <li><strong>Hormonal Support:</strong> Red Clover – Plant-based isoflavones (used with caution)</li>
+        <li><strong>Antioxidants:</strong> Green Tea, Turmeric, Holy Basil</li>
+        <li><strong>Anti-inflammatories:</strong> Turmeric, Ginger, Red Clover</li>
+        <li><strong>Liver Support:</strong> Dandelion Root, Milk Thistle</li>
+        <li><strong>Immune Modulators:</strong> Holy Basil, Reishi Mushroom</li>
+        <li><strong>Hormonal Support:</strong> Red Clover</li>
       </ul>
     </section>
 
     <section>
       <h2>Possible Side Effects</h2>
       <ul>
-        <li><strong>Green Tea:</strong> Contains caffeine; may cause jitteriness, insomnia</li>
+        <li><strong>Green Tea:</strong> Contains caffeine; may cause jitteriness</li>
         <li><strong>Turmeric:</strong> May cause stomach irritation; avoid with gallstones</li>
         <li><strong>Ginger:</strong> Blood-thinning; caution with anticoagulants</li>
-        <li><strong>Milk Thistle:</strong> May cause bloating or mild digestive upset</li>
-        <li><strong>Dandelion Root:</strong> Natural diuretic; not ideal for those on diuretics or with kidney conditions</li>
+        <li><strong>Milk Thistle:</strong> May cause digestive upset</li>
+        <li><strong>Dandelion Root:</strong> Diuretic; use caution with kidney conditions</li>
         <li><strong>Red Clover:</strong> Phytoestrogens; caution with hormone-sensitive conditions</li>
-        <li><strong>Holy Basil:</strong> Generally safe; avoid in pregnancy without consultation</li>
-        <li><strong>Reishi Mushroom:</strong> In large doses may cause dry mouth, dizziness, or upset stomach</li>
+        <li><strong>Holy Basil:</strong> Avoid in pregnancy without consultation</li>
+        <li><strong>Reishi Mushroom:</strong> May cause dry mouth or dizziness in large doses</li>
       </ul>
     </section>
 
@@ -226,9 +265,8 @@
 
     <section>
       <h2>How This Formula Was Created</h2>
-      <p>This blend was crafted with the assistance of ChatGPT, drawing from trusted herbal sources like “Medical Herbalism” by David Hoffmann, clinical studies from PubMed, and respected traditions in Ayurveda and Western herbal medicine.</p>
+      <p>This blend was crafted with the assistance of ChatGPT, drawing from trusted herbal sources like “Medical Herbalism” by David Hoffmann, PubMed clinical studies, and traditional wisdom from Ayurveda and Western herbalism.</p>
     </section>
-
   </main>
 
   <footer>
