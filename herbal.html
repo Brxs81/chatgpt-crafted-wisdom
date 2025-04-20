@@ -64,8 +64,8 @@
 
     nav {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: wrap; /* Allow the items to wrap */
+      justify-content: space-between;
       background-color: #ffe6a7;
       padding: 0.3rem 0.6rem;
       font-family: 'Playfair Display', serif;
@@ -74,13 +74,12 @@
       z-index: 2;
       border-bottom: 2px solid #e0c987;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      gap: 0.4rem 1rem;
-      max-width: 600px;
+      gap: 1rem;
+      max-width: 100%;
       margin: 0 auto;
     }
 
     nav a {
-      flex: 1 1 calc(33.333% - 1rem); /* Adjust for 3 columns */
       text-align: center;
       text-decoration: none;
       color: #5c3b1e;
@@ -96,28 +95,17 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Adjust for 2 rows in the menu */
-    @media (min-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      nav a {
-        flex: 1 1 calc(50% - 1rem); /* Make each link take half of the available space */
-      }
-    }
-
+    /* For smaller screens, make sure we have 2 rows */
     @media (max-width: 768px) {
       nav {
-        flex-direction: column;
-        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap; /* Allow items to wrap into 2 rows */
+        justify-content: space-between;
       }
+
       nav a {
-        flex: none;
-        width: 100%;
-        margin: 0.3rem 0;
+        flex: 1 1 calc(50% - 1rem); /* Each item will take 50% of the width on small screens */
+        margin: 0.3rem 0; /* Adds spacing between rows */
       }
     }
 
