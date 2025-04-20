@@ -64,7 +64,7 @@
 
     nav {
       display: flex;
-      flex-wrap: wrap; /* Allow the items to wrap */
+      flex-wrap: wrap; /* Ensure the items can wrap into multiple rows */
       justify-content: space-between;
       background-color: #ffe6a7;
       padding: 0.3rem 0.6rem;
@@ -95,17 +95,19 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* For smaller screens, make sure we have 2 rows */
+    /* For small screens, force the menu items to be in 2 rows */
     @media (max-width: 768px) {
       nav {
-        flex-direction: row;
-        flex-wrap: wrap; /* Allow items to wrap into 2 rows */
-        justify-content: space-between;
+        justify-content: center;  /* Center the links in the container */
       }
 
       nav a {
-        flex: 1 1 calc(50% - 1rem); /* Each item will take 50% of the width on small screens */
-        margin: 0.3rem 0; /* Adds spacing between rows */
+        width: calc(50% - 1rem);  /* Each link takes 50% of the width with space between them */
+        margin-bottom: 1rem;  /* Spacing between rows */
+      }
+
+      nav a:nth-child(odd) {
+        margin-right: 1rem;  /* Ensure items have spacing between them in the same row */
       }
     }
 
