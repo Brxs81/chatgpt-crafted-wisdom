@@ -63,9 +63,10 @@
     }
 
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+      grid-template-rows: repeat(2, auto); /* Create 2 rows */
+      grid-gap: 1rem;
       background-color: #ffe6a7;
       padding: 0.3rem 0.6rem;
       font-family: 'Playfair Display', serif;
@@ -74,7 +75,6 @@
       z-index: 2;
       border-bottom: 2px solid #e0c987;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      gap: 1rem;
       max-width: 100%;
       margin: 0 auto;
     }
@@ -87,7 +87,7 @@
       padding: 0.3rem 0.8rem;
       border-radius: 10px;
       transition: all 0.3s ease;
-      flex: 1 0 48%; /* This ensures each item takes up 48% of the width (allowing for two items per row) */
+      display: block;
     }
 
     nav a:hover {
@@ -99,13 +99,7 @@
     /* For smaller screens, force the menu items to be in 2 rows */
     @media (max-width: 768px) {
       nav {
-        flex-wrap: wrap;  /* Allow wrapping of items */
-        justify-content: center;
-      }
-
-      nav a {
-        flex: 1 0 48%; /* Ensures each item takes up 48% of the width (2 items per row) */
-        margin-bottom: 1rem;  /* Add spacing between rows */
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
       }
     }
 
