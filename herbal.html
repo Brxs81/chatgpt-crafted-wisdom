@@ -64,8 +64,8 @@
 
     nav {
       display: flex;
-      flex-wrap: wrap; /* Ensure the items can wrap into multiple rows */
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: center;
       background-color: #ffe6a7;
       padding: 0.3rem 0.6rem;
       font-family: 'Playfair Display', serif;
@@ -87,6 +87,7 @@
       padding: 0.3rem 0.8rem;
       border-radius: 10px;
       transition: all 0.3s ease;
+      flex: 1 0 48%; /* This ensures each item takes up 48% of the width (allowing for two items per row) */
     }
 
     nav a:hover {
@@ -95,19 +96,16 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* For small screens, force the menu items to be in 2 rows */
+    /* For smaller screens, force the menu items to be in 2 rows */
     @media (max-width: 768px) {
       nav {
-        justify-content: center;  /* Center the links in the container */
+        flex-wrap: wrap;  /* Allow wrapping of items */
+        justify-content: center;
       }
 
       nav a {
-        width: calc(50% - 1rem);  /* Each link takes 50% of the width with space between them */
-        margin-bottom: 1rem;  /* Spacing between rows */
-      }
-
-      nav a:nth-child(odd) {
-        margin-right: 1rem;  /* Ensure items have spacing between them in the same row */
+        flex: 1 0 48%; /* Ensures each item takes up 48% of the width (2 items per row) */
+        margin-bottom: 1rem;  /* Add spacing between rows */
       }
     }
 
