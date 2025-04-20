@@ -3,159 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Herbal</title>
+  <title>ChatGPT-Crafted Wisdom</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --main-color: #512c1b;
-      --highlight-color: #fbe29f;
-      --accent-color: #357d3c;
-      --background-color: #ffe8a3;
-      --text-color: #3b2e19;
-      --secondary-color: #fcd76f;
-      --sun-color: #f7c236;
-      --light-background: #fff8dc;
-      --border-radius: 12px;
-      --font-family-main: 'Open Sans', sans-serif;
-      --font-family-header: 'Playfair Display', serif;
-    }
-
     body {
       margin: 0;
-      font-family: var(--font-family-main);
-      background: linear-gradient(to bottom, var(--background-color), #fbe3aa);
-      color: var(--text-color);
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #f9e4b7, #fffbe6);
+      color: #2e2e1f;
       position: relative;
       overflow-x: hidden;
     }
 
-    .site-title {
-      font-family: var(--font-family-header);
-      text-align: center;
-      font-size: 2.8rem;
-      color: var(--main-color);
-      margin: 2rem 0 1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background-color: var(--secondary-color);
-      padding: 1rem 0;
-      border-radius: 10px;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      font-weight: bold;
-      position: relative;
-      z-index: 1;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--main-color);
-      font-size: 1.1rem;
-    }
-
-    nav a:hover {
-      color: #2e1a10;
-    }
-
-    main {
-      max-width: 860px;
-      background: var(--light-background);
-      margin: 0 auto 3rem;
-      padding: 2.5rem 2rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-family: var(--font-family-header);
-      font-size: 2rem;
-      text-align: center;
-      color: #205c2e;
-    }
-
-    h2 {
-      color: #206644;
-      font-family: var(--font-family-header);
-    }
-
-    .highlight-box {
-      background-color: #fdf1b6;
-      border-radius: var(--border-radius);
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      color: #2c3210;
-    }
-
-    .highlight-box ul {
-      padding-left: 1.2rem;
-      list-style-type: disc;
-    }
-
-    .highlight-box li {
-      margin-bottom: 0.6rem;
-    }
-
-    .highlight-box p {
-      margin-top: 1rem;
-      font-weight: 500;
-    }
-
-    section ul {
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    section li {
-      margin-bottom: 0.6rem;
-    }
-
-    .image-container {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .image-container img {
-      max-width: 100%;
-      border-radius: var(--border-radius);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: var(--highlight-color);
-      color: var(--text-color);
-    }
-
-    .logo {
-      display: block;
-      margin: 0 auto 2rem;
-      max-height: 120px;
-    }
-
-    /* Decorative SVGs */
-    .sun {
+    .sun-img {
       position: absolute;
-      top: 10px;
+      top: 20px;
       right: 40px;
       width: 80px;
-      height: 80px;
-      z-index: 0;
+      animation: rotateSun 20s linear infinite;
+      z-index: 1;
     }
 
-    .vine-left, .vine-right {
+    .vine-img {
       position: absolute;
       top: 0;
-      width: 100px;
-      height: auto;
-      z-index: 0;
+      width: 120px;
+      z-index: 1;
+      animation: sway 6s ease-in-out infinite;
     }
 
     .vine-left {
@@ -167,51 +41,105 @@
       transform: scaleX(-1);
     }
 
-    @media (max-width: 768px) {
-      .site-title {
-        font-size: 2.2rem;
-      }
+    @keyframes rotateSun {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
-      nav {
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(3deg); }
+    }
 
-      main {
-        padding: 2rem;
-      }
+    .site-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: #5c3b1e;
+      padding-top: 80px;
+      margin-bottom: 1rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ffe6a7;
+      padding: 0.8rem;
+      gap: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      z-index: 2;
+      position: relative;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5c3b1e;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2c1f0f;
+    }
+
+    main {
+      background: #fff8e1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: block;
+      margin: 1rem auto;
+      max-height: 100px;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #2e6834;
+    }
+
+    .highlight-box {
+      background: #fff3b0;
+      padding: 1rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ffedb5;
+      font-size: 0.9rem;
+      color: #5c3b1e;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Decorative SVGs -->
-  <svg class="sun" viewBox="0 0 64 64" fill="var(--sun-color)" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="12"/>
-    <g stroke="var(--sun-color)" stroke-width="4">
-      <line x1="32" y1="4" x2="32" y2="16"/>
-      <line x1="32" y1="48" x2="32" y2="60"/>
-      <line x1="4" y1="32" x2="16" y2="32"/>
-      <line x1="48" y1="32" x2="60" y2="32"/>
-      <line x1="12" y1="12" x2="20" y2="20"/>
-      <line x1="44" y1="44" x2="52" y2="52"/>
-      <line x1="12" y1="52" x2="20" y2="44"/>
-      <line x1="44" y1="20" x2="52" y2="12"/>
-    </g>
-  </svg>
+  <!-- Decorative Graphics -->
+  <img src="sun.png" alt="Sun" class="sun-img" />
+  <img src="vine-left.png" alt="Left Vine" class="vine-img vine-left" />
+  <img src="vine-right.png" alt="Right Vine" class="vine-img vine-right" />
 
-  <svg class="vine-left" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,100 Q40,0 100,0" stroke="var(--accent-color)" stroke-width="4" fill="none"/>
-    <circle cx="20" cy="80" r="5" fill="var(--accent-color)"/>
-    <circle cx="60" cy="30" r="5" fill="var(--accent-color)"/>
-  </svg>
-
-  <svg class="vine-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,100 Q40,0 100,0" stroke="var(--accent-color)" stroke-width="4" fill="none"/>
-    <circle cx="20" cy="80" r="5" fill="var(--accent-color)"/>
-    <circle cx="60" cy="30" r="5" fill="var(--accent-color)"/>
-  </svg>
-
+  <!-- Header & Nav -->
   <div class="site-title">ChatGPT-Crafted Wisdom</div>
 
   <nav>
@@ -228,7 +156,7 @@
 
     <header>
       <h1>Anti-Cancer Support & Prevention Tea Blend</h1>
-      <p style="text-align:center;">A ChatGPT-Crafted Wisdom Article | A blend of ancient herbal knowledge and AI insight</p>
+      <p>A ChatGPT-Crafted Wisdom Article | A blend of ancient herbal knowledge and AI insight</p>
     </header>
 
     <section>
@@ -300,6 +228,7 @@
       <h2>How This Formula Was Created</h2>
       <p>This blend was crafted with the assistance of ChatGPT, drawing from trusted herbal sources like “Medical Herbalism” by David Hoffmann, clinical studies from PubMed, and respected traditions in Ayurveda and Western herbal medicine.</p>
     </section>
+
   </main>
 
   <footer>
