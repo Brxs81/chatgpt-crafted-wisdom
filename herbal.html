@@ -150,84 +150,22 @@
       border-radius: 8px;
     }
 
-    /* --- Inspiration Mode Styles --- */
     .inspiration-mode {
-      background: radial-gradient(circle at top, #ffe0f0 0%, #a0f0ff 100%);
-      background-size: 400% 400%;
-      animation: animateBG 20s ease infinite;
+      background: linear-gradient(to bottom, #ffb6c1, #a0d8f1); /* Soft pink and blue */
       color: #4a2c2a;
     }
 
-    @keyframes animateBG {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
     .inspiration-mode .site-title {
-      color: #ff4499;
-      text-shadow: 0 0 8px #ffd1e3;
+      color: #8e3b46;
     }
 
-    .inspiration-mode h1, 
-    .inspiration-mode h2 {
-      color: #b436a3;
-      text-shadow: 1px 1px 2px #fff0f5;
-    }
-
-    .inspiration-mode .highlight-box {
-      animation: sparkle 3s infinite ease-in-out;
-      background: rgba(255, 243, 176, 0.85);
-      border: 2px dashed #ff9de6;
+    .inspiration-mode h1, .inspiration-mode h2 {
+      color: #7a2b6f;
     }
 
     .inspiration-mode footer {
       background: #ffcad4;
       color: #5c2f2f;
-    }
-
-    @keyframes sparkle {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.02); }
-    }
-
-    /* Floating Symbols Animation */
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(-200px) rotate(360deg); opacity: 0; }
-    }
-
-    .floating-symbols {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      pointer-events: none;
-      z-index: 3;
-    }
-
-    .floating-symbols span {
-      position: absolute;
-      bottom: 0;
-      font-size: 2rem;
-      animation: float 6s linear infinite;
-      color: #ff77a9;
-    }
-
-    .floating-symbols span:nth-child(2n) {
-      left: -60px;
-      animation-delay: 2s;
-      color: #77caff;
-    }
-
-    .floating-symbols span:nth-child(3n) {
-      left: 40px;
-      animation-delay: 3.5s;
-      color: #ffcc70;
-    }
-
-    .floating-symbols span:nth-child(4n) {
-      left: -100px;
-      animation-delay: 4.2s;
-      color: #d0a2f2;
     }
 
     .mode-switch {
@@ -344,6 +282,7 @@
       <h2>How This Formula Was Created</h2>
       <p>This blend was crafted with the assistance of ChatGPT, drawing from trusted herbal sources like “Medical Herbalism” by David Hoffmann, clinical studies from PubMed, and respected traditions in Ayurveda and Western herbal medicine.</p>
     </section>
+
   </main>
 
   <button class="mode-switch" onclick="toggleMode()">Switch to Inspiration Mode</button>
@@ -352,23 +291,17 @@
     <p>© 2025 ChatGPT-Crafted Wisdom | Designed with love, herbs, and AI magic</p>
   </footer>
 
-  <!-- Floating Symbols -->
-  <div class="floating-symbols">
-    <span>♪</span>
-    <span>♥</span>
-    <span>♫</span>
-    <span>❀</span>
-    <span>♪</span>
-  </div>
-
   <script>
     // Function to toggle inspiration mode
     function toggleMode() {
       document.body.classList.toggle('inspiration-mode');
+      
       const button = document.querySelector('.mode-switch');
-      button.textContent = document.body.classList.contains('inspiration-mode') 
-        ? 'Switch to Normal Mode' 
-        : 'Switch to Inspiration Mode';
+      if (document.body.classList.contains('inspiration-mode')) {
+        button.textContent = 'Switch to Normal Mode';
+      } else {
+        button.textContent = 'Switch to Inspiration Mode';
+      }
     }
   </script>
 </body>
