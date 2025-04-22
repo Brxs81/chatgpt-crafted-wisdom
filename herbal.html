@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChatGPT-Crafted Wisdom</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #f9e4b7, #fffbe6);
-      color: #2e2e1f;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #f8b3d5, #fff1d0); /* Soft Pink and Peach Gradient */
+      color: #5a3f6d; /* Muted Purple for contrast */
       position: relative;
       overflow-x: hidden;
       transition: background 0.5s ease, color 0.5s ease;
@@ -20,7 +20,7 @@
       position: absolute;
       top: 20px;
       right: 40px;
-      width: 100px;
+      width: 120px;
       animation: rotateSun 20s linear infinite;
       z-index: 1;
     }
@@ -28,7 +28,7 @@
     .vine-img {
       position: absolute;
       top: 0;
-      width: 140px;
+      width: 150px;
       z-index: 1;
       animation: sway 6s ease-in-out infinite;
     }
@@ -54,13 +54,14 @@
 
     .site-title {
       text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      color: #5c3b1e;
-      padding-top: 80px;
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5rem;
+      color: #8e2e8f;
+      padding-top: 100px;
       margin-bottom: 1rem;
       z-index: 2;
       position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
     nav {
@@ -68,81 +69,79 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, auto);
       grid-gap: 1rem;
-      background-color: #ffe6a7;
-      padding: 0.3rem 0.6rem;
-      font-family: 'Playfair Display', serif;
+      background-color: #fffbe6;
+      padding: 0.5rem 0.8rem;
+      font-family: 'Quicksand', sans-serif;
       font-weight: bold;
       position: relative;
       z-index: 2;
-      border-bottom: 2px solid #e0c987;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      max-width: 100%;
-      margin: 0 auto;
+      border-bottom: 2px solid #d8a5cd;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
       text-align: center;
       text-decoration: none;
       color: #5c3b1e;
-      font-size: 0.9rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 10px;
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+      border-radius: 20px;
       transition: all 0.3s ease;
       display: block;
     }
 
     nav a:hover {
-      background-color: #fddc8a;
-      color: #2c1f0f;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      background-color: #f7d1e1;
+      color: #8e2e8f;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     }
 
     main {
-      background: #fff8e1;
+      background: #fff5f0;
       max-width: 900px;
       margin: 2rem auto;
-      padding: 2rem;
+      padding: 2.5rem;
       border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       position: relative;
       z-index: 2;
       transition: background 0.5s ease, color 0.5s ease;
+      font-family: 'Quicksand', sans-serif;
     }
 
     .logo {
       display: block;
-      margin: 1rem auto;
-      max-height: 100px;
+      margin: 2rem auto;
+      max-height: 120px;
     }
 
     h1, h2 {
-      font-family: 'Playfair Display', serif;
-      color: #2e6834;
+      font-family: 'Pacifico', cursive;
+      color: #da427a;
+      text-align: center;
     }
 
     .highlight-box {
-      background: #fff3b0;
-      padding: 1rem;
+      background: #f0d6e8;
+      padding: 1.5rem;
       border-radius: 12px;
-      margin: 1rem 0;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     ul {
-      padding-left: 1.2rem;
+      padding-left: 1.4rem;
+      font-family: 'Quicksand', sans-serif;
+      color: #5a3f6d;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #ffedb5;
-      font-size: 0.9rem;
-      color: #5c3b1e;
+      padding: 1.5rem;
+      background: #f4e1f4;
+      font-size: 1rem;
+      color: #8e2e8f;
+      font-family: 'Pacifico', cursive;
     }
 
     img {
@@ -151,87 +150,147 @@
     }
 
     .inspiration-mode {
-      background: linear-gradient(to bottom, #ffb6c1, #a0d8f1); /* Soft pink and blue */
-      color: #4a2c2a;
+      background: linear-gradient(to right, #ffecd1, #f7b7b7); /* Soft peach and pink gradient */
+      color: #4a2c5b; /* Darker purple for text */
+      font-family: 'Pacifico', cursive;
     }
 
     .inspiration-mode .site-title {
-      color: #8e3b46;
+      color: #9d3a60; /* Deeper pink for title */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
 
     .inspiration-mode h1, .inspiration-mode h2 {
-      color: #7a2b6f;
+      color: #9d5e6d;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .inspiration-mode nav {
+      background-color: #fbe4e8;
+      border: none;
+      box-shadow: none;
+    }
+
+    .inspiration-mode nav a {
+      color: #7f3d56;
+    }
+
+    .inspiration-mode nav a:hover {
+      background-color: #f5c4d1;
+      color: #9d3a60;
+      box-shadow: none;
+    }
+
+    .inspiration-mode main {
+      background: #f9d0e1;
+      color: #4a2c5b;
+      border: 1px solid #e8a5b7;
+      box-shadow: none;
+    }
+
+    .inspiration-mode .highlight-box {
+      background: #ffe0f0;
+      border: 1px solid #e8a5b7;
     }
 
     .inspiration-mode footer {
-      background: #ffcad4;
-      color: #5c2f2f;
+      background: #f6b1c2;
+      color: #9d5e6d;
+      border-top: 1px solid #9d5e6d;
     }
 
+    .inspiration-mode img {
+      filter: brightness(90%) saturate(150%);
+      border: 2px solid #9d5e6d;
+    }
+
+    /* Newspaper Mode */
     .newspaper-mode {
-      background: #ffffff !important;
-      color: #111 !important;
-      font-family: 'Georgia', serif;
-      filter: grayscale(100%);
+      background: #f4f4f4; /* Classic newspaper background */
+      color: #333; /* Dark text for easy readability */
+      font-family: 'Georgia', serif; /* Serif font for newspaper look */
+      line-height: 1.6;
     }
 
-    .newspaper-mode .site-title,
-    .newspaper-mode h1,
-    .newspaper-mode h2 {
-      color: #000 !important;
+    .newspaper-mode .site-title {
+      font-size: 4rem;
+      color: #2e2e2e;
+      text-align: center;
+      font-family: 'Georgia', serif;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      margin-bottom: 20px;
     }
 
     .newspaper-mode nav {
-      background-color: #f1f1f1;
-      border: 1px solid #000;
+      background-color: #ccc;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 1rem;
       box-shadow: none;
     }
 
     .newspaper-mode nav a {
-      color: #111;
-      font-family: 'Georgia', serif;
+      color: #333;
+      padding: 0.8rem 1.5rem;
+      text-transform: uppercase;
+      text-decoration: none;
     }
 
     .newspaper-mode nav a:hover {
-      background: #ddd;
-      color: #000;
-      box-shadow: none;
+      background-color: #999;
+      color: white;
     }
 
     .newspaper-mode main {
-      background: #fefefe;
-      color: #111;
-      border: 1px solid #000;
-      box-shadow: none;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+      width: 80%;
+    }
+
+    .newspaper-mode h1,
+    .newspaper-mode h2 {
       font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      font-weight: bold;
     }
 
     .newspaper-mode .highlight-box {
-      background: #f9f9f9;
-      border: 1px solid #000;
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-left: 5px solid #333;
     }
 
     .newspaper-mode footer {
-      background: #f2f2f2;
-      color: #000;
-      border-top: 1px solid #000;
-    }
-
-    .newspaper-mode img {
-      filter: grayscale(100%);
-      border: 1px solid #111;
+      background-color: #333;
+      color: #fff;
+      padding: 1.5rem;
+      font-size: 1rem;
+      text-align: center;
     }
 
     .mode-switch {
       position: fixed;
       top: 20px;
       right: 20px;
-      padding: 0.4rem;
+      padding: 0.5rem;
       font-weight: bold;
-      border-radius: 6px;
+      border-radius: 12px;
+      background-color: #ffccd5;
+      color: #7f3d56;
       z-index: 10;
+      border: 2px solid #ff9c9c;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .mode-switch:hover {
+      background-color: #ff9c9c;
+      color: white;
     }
 
   </style>
@@ -290,53 +349,6 @@
         </ul>
         <p><strong>Preparation:</strong> Simmer roots (ginger, turmeric, dandelion, reishi, milk thistle) for 15–20 minutes. Then add green tea, red clover, tulsi and steep 10 more minutes. Strain and enjoy warm.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Functional Herb Categories</h2>
-      <ul>
-        <li><strong>Antioxidants:</strong> Green Tea, Turmeric, Holy Basil – Protects cells from oxidative stress</li>
-        <li><strong>Anti-inflammatories:</strong> Turmeric, Ginger, Red Clover – Reduces chronic inflammation</li>
-        <li><strong>Liver Support:</strong> Dandelion Root, Milk Thistle – Promotes detoxification</li>
-        <li><strong>Immune Modulators:</strong> Holy Basil, Reishi Mushroom – Enhances immune defense</li>
-        <li><strong>Hormonal Support:</strong> Red Clover – Plant-based isoflavones (used with caution)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Possible Side Effects</h2>
-      <ul>
-        <li><strong>Green Tea:</strong> Contains caffeine; may cause jitteriness, insomnia</li>
-        <li><strong>Turmeric:</strong> May cause stomach irritation; avoid with gallstones</li>
-        <li><strong>Ginger:</strong> Blood-thinning; caution with anticoagulants</li>
-        <li><strong>Milk Thistle:</strong> May cause bloating or mild digestive upset</li>
-        <li><strong>Dandelion Root:</strong> Natural diuretic; not ideal for those on diuretics or with kidney conditions</li>
-        <li><strong>Red Clover:</strong> Phytoestrogens; caution with hormone-sensitive conditions</li>
-        <li><strong>Holy Basil:</strong> Generally safe; avoid in pregnancy without consultation</li>
-        <li><strong>Reishi Mushroom:</strong> In large doses may cause dry mouth, dizziness, or upset stomach</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Precautions</h2>
-      <p>This tea is intended for wellness and prevention. Consult a healthcare professional if you:</p>
-      <ul>
-        <li>Are undergoing cancer treatment</li>
-        <li>Are pregnant or breastfeeding</li>
-        <li>Take blood thinners or liver/kidney medications</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Infographic</h2>
-      <div class="image-container">
-        <img src="1000006917.jpg" alt="Anti-Cancer Support Tea Infographic" />
-      </div>
-    </section>
-
-    <section>
-      <h2>How This Formula Was Created</h2>
-      <p>This blend was crafted with the assistance of ChatGPT, drawing from trusted herbal sources like “Medical Herbalism” by David Hoffmann, clinical studies from PubMed, and respected traditions in Ayurveda and Western herbal medicine.</p>
     </section>
 
   </main>
